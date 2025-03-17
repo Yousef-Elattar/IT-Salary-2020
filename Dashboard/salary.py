@@ -6,7 +6,7 @@ import plotly.express as px
 # ✅ st.set_page_config() must be the first Streamlit command
 st.set_page_config(
     
-    layout='wide', page_title='IT Salary', page_icon="logo.png"
+    layout='wide', page_title='IT Salary', page_icon="data/logo.png"
 )
 
 @st.cache_data
@@ -89,7 +89,7 @@ st.markdown(page_bg_color, unsafe_allow_html=True)
 
 
 # Sidebar content
-st.sidebar.image("logo3.png", width=250)
+st.sidebar.image("data/logo3.png", width=250)
 st.sidebar.write("")
 
 
