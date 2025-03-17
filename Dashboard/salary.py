@@ -354,38 +354,27 @@ st.sidebar.write("")
 st.sidebar.write("")
 seniority_levels = df['seniority_level'].unique()
 selected_level = st.sidebar.selectbox("Select Seniority Level", options=seniority_levels)
+import streamlit as st
+
+# Add space at the top of the sidebar
+for _ in range(8):
+    st.sidebar.write("")  # Adds empty lines
+
+# Custom horizontal line (as Streamlit doesn't allow <hr> styling properly)
 st.sidebar.markdown(
-    """
-    <style>
-        .sidebar-space {
-            margin-bottom: 160px; /* Adjust space as needed */
-        }
-    </style>
-    <div class="sidebar-space">
-    </div>
-    """,
+    "---",  # Adds a default horizontal line in Streamlit
     unsafe_allow_html=True
 )
-st.sidebar.markdown(
-    """
-    <style>
-        .custom-line {
-            border: none;
-            height: 2px; /* Line thickness */
-            background-color: #D0D3D9; /* Change this to any color */
-            margin: 10px 0; /* Adjust spacing above & below */
-        }
-    </style>
-    <hr class="custom-line">
-    """,
-    unsafe_allow_html=True
-)
+
+# Sidebar Title
 st.sidebar.title("ℹ️ About")
+
+# Sidebar Links with Spacing
 st.sidebar.markdown(
     """
     <style>
         .sidebar-links {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: normal;
             color: #ffffff;
             text-align: left;
@@ -393,24 +382,32 @@ st.sidebar.markdown(
         }
         .sidebar-links a {
             text-decoration: none;
-            color: #D0D3D9; /* Google Yellow */
+            color: #D0D3D9; /* Light Gray */
             font-weight: normal;
         }
         .sidebar-links a:hover {
-            color: #ffffff; /* Hover Color */
+            color: #ffffff; /* White on Hover */
         }
         .sidebar-links p {
             margin-bottom: 20px; /* Adds space between links */
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1); /* Subtle Background */
+            border-radius: 5px;
         }
     </style>
     <div class="sidebar-links">
         <p>🔗 <a href="https://www.kaggle.com/datasets/parulpandey/2020-it-salary-survey-for-eu-region" target="_blank">Data Source</a></p>
-         <p>🛠️ <a href="https://github.com/Yousef-Elattar/IT-Salary-2020/blob/main/Dashboard/salary.py" target="_blank">GitHub Repo</a></p>
+        <p>🛠️ <a href="https://github.com/Yousef-Elattar/IT-Salary-2020/blob/main/Dashboard/salary.py" target="_blank">GitHub Repo</a></p>
         <p>📬 <a href="https://www.linkedin.com/in/yusuf-elattar-43159021b" target="_blank">Contact Me</a></p>
     </div>
     """,
     unsafe_allow_html=True
 )
+
+# Add more spacing at the bottom
+for _ in range(6):
+    st.sidebar.write("")
+
 
 # Create Tabs in Streamlit
 tab1, tab2 = st.tabs(["📈 Charts", "📄 Conclusion"])
