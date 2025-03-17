@@ -11,7 +11,7 @@ st.set_page_config(
 
 @st.cache_data
 def load_data():
-    return pd.read_csv("cleaned_data.csv")
+    return pd.read_csv("data/cleaned_data.csv")
 
 df = load_data()
 st.markdown("""
@@ -405,7 +405,7 @@ st.sidebar.markdown(
     </style>
     <div class="sidebar-links">
         <p>🔗 <a href="https://www.kaggle.com/datasets/parulpandey/2020-it-salary-survey-for-eu-region" target="_blank">Data Source</a></p>
-        <p>🛠️ <a href="https://github.com/sherifkhalil85" target="_blank">GitHub Repo</a></p>
+        <p>🛠️ <a href="https://github.com/Yousef-Elattar/IT-Salary-2020/edit/main/Dashboard/salary.py>GitHub Repo</a></p>
         <p>📬 <a href="https://www.linkedin.com/in/yusuf-elattar-43159021b" target="_blank">Contact Me</a></p>
     </div>
     """,
